@@ -1,4 +1,4 @@
-# spellcaster
+# Spellcaster
 Processing code to implement John Fairfield's Spellcaster
 
 Processing is a visually-oriented Java-based language developed by 
@@ -15,33 +15,68 @@ color you are stepping onto matches the current pen color, and branch based
 on the result. You can name a series of commands (create a spell) which you
 can then cast and include in other spells.
 
-Spellcaster commands:
-'A' (AKA): cycle to next color
-'B' (BO): move one step in the current direction, leaving current pen color
-'D' (DI): reverse direction
-'E': expose (set) teleporter (next character is teleporter name)
-'F': felt (return to) teleporter (next character is the name)
-'G' (GO): move one step in current direction
-'H' (HI): turn to point upwards
-'I' (IX): if - exit if matched (pen color and color stepped on)
-'J' (JO): move one step in the current direction
-'K': set pen color (next character is A,E,I,O,U - see note about numbers)
-'L' (LI): turn left
-'M': repeat (must be the beginning of word, next character is A,E,I,O,U number)
-'N' (NU): repeat indefinitely (must be the beginning of word)
-'O' (OX): if not - exit if unmatched (pen color and color stepped on)
-'P' (PU): left paren (start new spell/word)
-'Q' (QUSH): toggle sound (no sound in this version currently)
-'R' (RI): turn right
-'S' (SPELLS TU): name a spell
-'T' (TU): begin spell name
-'V' (VUZIM): like W, but doesn't wait - looks for one key spell
-'W' (WU): request input until ZIM
-'X' (XEN): else (MUST BE AT VERY BEGINNING OF WORD)
-'Y' (Y): toggle mirror
-'Z' (ZIM): right paren (ends PU or WU phrase, or TU spellname)
-' ': ends word, UNLESS INSIDE A PU OR WU
-'!': clears screen and resets everything
+```
+Single syllable spells available in Spellcaster:
+'key' syllable and meaning:
+
+'A' AKA      : cycle to next color
+'B' BO       : move one step in the current direction, leaving current pen color
+'D' DI       : reverse direction
+'E'          : expose (set) teleporter (next character is teleporter name)
+'F'          : felt (return to) teleporter (next character is the name)
+'G' GO       : move one step in current direction
+'H' HI       : turn to point upwards
+'I' IX       : if - exit if matched (pen color and color stepped on)
+'J' JO       : move one step in the current direction
+'K'          : set pen color (next character is A,E,I,O,U - see note about numbers)
+'L' LI       : turn left
+'M'          : repeat (beginning of word, next character is A,E,I,O,U number)
+'N' NU       : repeat indefinitely (must be the beginning of word)
+'O' OX       : if not - exit if unmatched (pen color and color stepped on)
+'P' PU       : left paren (start new spell/word)
+'Q' QUSH     : toggle sound (no sound in this version currently)
+'R' RI       : turn right
+'S' SPELLS TU: name a spell
+'T' TU       : begin spell name
+'V' VUZIM    : like W, but doesn't wait - looks for one key spell
+'W' WU       : request input until ZIM
+'X' XEN      : else (MUST BE AT VERY BEGINNING OF WORD)
+'Y' Y        : toggle mirror
+'Z' ZIM      : right paren (ends PU or WU phrase, or TU spellname)
+' '          : ends word, UNLESS INSIDE A PU OR WU
+'!'          : clears screen and resets everything
+
+
+
+
+note about numbers:
+  
+  in case of m:
+   O A E I U
+   0 1 2 3 random
+  
+  in case of k:
+   ku chooses a random colour
+  
+   if there are four colours, they will be named: 
+    KO KA KE KI
+  
+   if there are sixteen colours their names will be:
+  
+         -KO  -KA  -KE  -KI
+
+    KO-  KOKO .... .... ....
+    KA-  .... KAKA .... ....
+    KE-  .... .... KEKE ....
+    KI-  .... .... .... KIKI
+
+
+    i think you get it ( fill in the blanks,
+    	john fairfield might say something like take a hint :)
+
+
+
+```
 
 mouse click saves named spells currently in memory to disk file spells.txt
 
@@ -51,3 +86,7 @@ all the issues).
 
 Spellcaster had the ability to use arrow keys to back up and go forward, and
 could pre-load spells into the key buffer, which was very useful for tutorials.
+
+
+
+
